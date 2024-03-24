@@ -1,29 +1,37 @@
+import React from "react";
+import { Button } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import { appStyles } from './styles/main_app/jscript_styles';
+import { GameContainer } from './pages/gamepage/GameContainer';
+import { HomePageContainer } from './pages/homepage/HomePageContainer';
+import { darkModeTheme, lightModeTheme } from "./styles/themes/mui_theme";
 
-function App() {
+export const App = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(prevMode => !prevMode);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
+    <ThemeProvider theme={isDarkMode ? lightModeTheme : darkModeTheme}>
+      <Button
+        variant='contained'
+        disableElevation
+        onClick={toggleDarkMode}
+        sx={{
+          ...appStyles.themeButton
+        }}
+      >
+        theme mode
+      </Button>
+      <Routes>
+        <Route path='/' element={<HomePageContainer />} />
+        <Route path='/game' element={< GameContainer />} />
+      </Routes>
+    </ThemeProvider>
   );
-}
-
-export default App;
+};
