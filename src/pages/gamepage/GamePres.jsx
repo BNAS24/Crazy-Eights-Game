@@ -157,6 +157,7 @@ export const GamePres = ({
         setDeckState={setDeckState}
         disableInteraction={disableInteraction}
       />
+      {/*Winner Modal Component */}
       <WinnerModal
         open={isGameOver}
         onClose={handleGameReset}

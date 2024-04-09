@@ -10,7 +10,7 @@ const checkConditionals = (conditions) => {
     aSpecialCard,
   ] = conditions;
 
-  console.log(conditions);
+  // console.log(conditions);
 
   return !aSpecialCard &&
     (cardSuitMatches || cardValueMatches || selectedSuitMatches)
@@ -27,12 +27,12 @@ const checkConditionals = (conditions) => {
 // Define the checkCards function
 const checkCards = (card, suitSelected, cardInPile) => {
   // Delete after testing
-  console.log({
-    message: "check cards",
-    cardInPile: cardInPile,
-    suitSelected: suitSelected,
-    card: card,
-  });
+  // console.log({
+  //   message: "check cards",
+  //   cardInPile: cardInPile,
+  //   suitSelected: suitSelected,
+  //   card: card,
+  // });
 
   const conditions = [
     suitSelected.current === card.suit, // suit selected matches
@@ -48,7 +48,7 @@ const checkCards = (card, suitSelected, cardInPile) => {
   const value = checkConditionals(conditions);
 
   // Delete after testing
-  console.log("value", value);
+  // console.log("value", value);
 
   return value;
 };
@@ -68,13 +68,13 @@ const drawCards = (...args) => {
     disableInteractivity,
   ] = args;
 
-  console.log({
-    message: "draw cards",
-    usersTurn: usersTurn,
-    deckState: deckState,
-    usersCards: usersCards,
-    cardsInHand: cardsInHand,
-  });
+  // console.log({
+  //   message: "draw cards",
+  //   usersTurn: usersTurn,
+  //   deckState: deckState,
+  //   usersCards: usersCards,
+  //   cardsInHand: cardsInHand,
+  // });
 
   // Determine which player is playing and plucking the card
   const whosTurn = usersTurn ? "userCardsInHand" : "computersCardsInHand";
@@ -82,10 +82,10 @@ const drawCards = (...args) => {
   // Remove the last card from the deck
   const pluckedCard = deckState?.slice(-1)[0];
 
-  console.log("plucked card", pluckedCard);
+  // console.log("plucked card", pluckedCard);
 
   setDeckState((prevDeckState) =>
-    prevDeckState.filter((card) => card.code !== pluckedCard.code)
+    prevDeckState.filter((card) => card.code !== pluckedCard?.code)
   );
 
   // Update the UI state by the players turn with card selected
@@ -122,7 +122,7 @@ const drawCards = (...args) => {
 
 const drawTwo = (...args) => {
 
-  console.log(...args);
+  // console.log(...args);
 
   const [
     usersTurn,
@@ -143,7 +143,7 @@ const drawTwo = (...args) => {
   // Remove the last card from the deck
   const twoCardsDrawn = deckState.splice(-2);
 
-  console.log('two cards drawn', twoCardsDrawn);
+  // console.log('two cards drawn', twoCardsDrawn);
 
   // Update the deckState by filtering out the plucked cards
   setDeckState((prevDeckState) =>
@@ -184,7 +184,9 @@ const drawTwo = (...args) => {
 
 // Crazy eight modal logic
 const handleCrazyEight = (...arr) => {
-  console.log("arr", arr);
+// Delete after testing
+  // console.log("arr", arr);
+
   const [
     usersTurn,
     event,
@@ -200,7 +202,7 @@ const handleCrazyEight = (...arr) => {
     disableInteraction,
   ] = arr;
 
-  console.log("args", arr);
+  // console.log("args", arr);
 
   // Prevent clicking and escape key from closing back drop on modal
   if (reason === "backdropClick" || reason === "escapeKeyDown") {
@@ -208,7 +210,7 @@ const handleCrazyEight = (...arr) => {
   }
 
   // Testing purposes (remove later)
-  console.log("event", event);
+  // console.log("event", event);
 
   !usersTurn
     ? ((suitSelected.current = event),
@@ -315,15 +317,15 @@ const computerResponse = (
   let cardMatchedWithSuit = null;
 
   // Delete after testing
-  console.log({
-    message: "computer",
-    cardInPile: cardInPile,
-    suitSelected: suitSelected,
-    cardsInHand: cardsInHand,
-    usersCards: usersCards,
-    deckState: deckState,
-    setDeckState: setDeckState,
-  });
+  // console.log({
+  //   message: "computer",
+  //   cardInPile: cardInPile,
+  //   suitSelected: suitSelected,
+  //   cardsInHand: cardsInHand,
+  //   usersCards: usersCards,
+  //   deckState: deckState,
+  //   setDeckState: setDeckState,
+  // });
 
   // Cards that can possibly be played
   let filteredCards;
@@ -335,17 +337,17 @@ const computerResponse = (
         card.value === cardInPile.current.value ||
         card.value === "8"
     );
-    console.log("Filtered cards (regular):", filteredCards);
+    // console.log("Filtered cards (regular):", filteredCards);
     compSelectedCard =
       filteredCards.length > 0
         ? compIntelligence(filteredCards, cardsInHand, usersCards)
         : null;
-    console.log("compSelectedCard", compSelectedCard);
+    // console.log("compSelectedCard", compSelectedCard);
   } else if (suitSelected.current !== null) {
     filteredCards = cardsInHand.filter(
       (card) => card.suit === suitSelected.current
     );
-    console.log("Filtered cards (suitSelected):", filteredCards);
+    // console.log("Filtered cards (suitSelected):", filteredCards);
     cardMatchedWithSuit =
       filteredCards.length > 0
         ? compIntelligence(filteredCards, cardsInHand, usersCards)
@@ -445,17 +447,17 @@ const decisionMaking = (
   const usersTurn = fromComputer ? false : true;
 
   // Delete after testing
-  console.log({
-    message: "decisionMaking",
-    fromComputer: fromComputer,
-    value: value,
-    card: card,
-    cardInPile: cardInPile,
-    suitSelected: suitSelected,
-    usersTurn: usersTurn,
-    deckState: deckState,
-    setDeckState: setDeckState,
-  });
+  // console.log({
+  //   message: "decisionMaking",
+  //   fromComputer: fromComputer,
+  //   value: value,
+  //   card: card,
+  //   cardInPile: cardInPile,
+  //   suitSelected: suitSelected,
+  //   usersTurn: usersTurn,
+  //   deckState: deckState,
+  //   setDeckState: setDeckState,
+  // });
 
   // Variable intialized to return to user function
   let returnValue;
@@ -488,7 +490,7 @@ const decisionMaking = (
               crazyEightSelections[
                 Math.floor(Math.random() * crazyEightSelections.length)
               ];
-            console.log("suit selected (decision making):", suit);
+            // console.log("suit selected (decision making):", suit);
             const arr = [
               usersTurn,
               suit,
@@ -593,7 +595,8 @@ const handleUsersTurn = (
   setDeckState,
   disableInteraction
 ) => {
-  console.log("handleUsersTurn called");
+
+  // console.log("handleUsersTurn called");
 
   // Captures the value in the return statement and stores it in a variable
   const cardValidation = checkCards(cardSelected, suitSelected, cardInPile);
@@ -619,7 +622,7 @@ const handleUsersTurn = (
     setDeckState,
   );
 
-  console.log("decision making value", decision);
+  // console.log("decision making value", decision);
 
   // Prevents the computerResponse from running if certain values are returned
   if (

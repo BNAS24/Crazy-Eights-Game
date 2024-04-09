@@ -65,12 +65,7 @@ export const gameSetup = () => {
       };
     };
   
-    // *old* Fuction to shuffle an array
-    // const shuffleArray = (array) => {
-    //   return array.sort(() => Math.random() - 0.5);
-    // };
-
-    // Fisher Yates algorithm
+    // Fisher Yates algorithm for shuffling cards
     const shuffleArray = (array) => {
       for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1)); // Generate random index from 0 to i

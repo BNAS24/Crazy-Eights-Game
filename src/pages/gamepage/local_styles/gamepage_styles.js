@@ -18,6 +18,7 @@ export const gamePageStyles = {
             height: 'auto',
             width: '80px',
             marginLeft: '-30px',
+            marginTop: '-48px',
         },
     },
     deckOfCardConainer: {
@@ -61,6 +62,7 @@ export const gamePageStyles = {
             height: 'auto',
             width: '80px',
             marginLeft: '-30px',
+            marginTop: '-48px',
             '&:hover': {
                 cursor: 'pointer',
             },
