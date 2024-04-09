@@ -76,7 +76,6 @@ export const GamePres = ({
             component="img"
             // src={card.image}
             src="https://deckofcardsapi.com/static/img/back.png"
-            // alt={card.code}
             alt="card"
             sx={{
               ...gamePageStyles.opponentCardStackContainer.cards,

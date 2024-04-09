@@ -12,6 +12,7 @@ export const gamePageStyles = {
         display: 'flex',
         justifyContent: 'center',
         flexWrap: 'wrap',
+        paddingLeft: '32px',
         cards: {
             height: 'auto',
             width: '80px',
@@ -54,6 +55,7 @@ export const gamePageStyles = {
         display: 'flex',
         justifyContent: 'center',
         flexWrap: 'wrap',
+        paddingLeft: '32px',
         cards: {
             height: 'auto',
             width: '80px',
