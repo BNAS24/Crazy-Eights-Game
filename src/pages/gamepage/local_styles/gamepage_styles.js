@@ -6,6 +6,7 @@ export const gamePageStyles = {
         justifyContent: 'space-around',
         width: '100%',
         height: '100%',
+        paddingTop: '40px',
         minHeight: '100vh',
     },
     opponentCardStackContainer: {
