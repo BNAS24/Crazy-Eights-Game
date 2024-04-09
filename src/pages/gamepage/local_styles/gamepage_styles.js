@@ -16,7 +16,7 @@ export const gamePageStyles = {
             height: 'auto',
             width: '80px',
             marginLeft: '-30px',
-        }
+        },
     },
     deckOfCardConainer: {
         position: 'relative',

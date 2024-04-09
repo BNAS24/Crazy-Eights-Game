@@ -65,6 +65,7 @@ export const GamePres = ({
     >
       {/*Computers hand of cards*/}
       <Container
+        disableGutters={true}
         sx={{
           ...gamePageStyles.opponentCardStackContainer,
         }}
@@ -125,7 +126,9 @@ export const GamePres = ({
         </Container>
       </Container>
       {/*Users hand of cards */}
-      <Container sx={{ ...gamePageStyles.userCardStackContainer }}>
+      <Container 
+      disableGutters={true}
+      sx={{ ...gamePageStyles.userCardStackContainer }}>
         {cardState.userCardsInHand.map((card) => (
           <Box
             onClick={() => turnInteractivity(card)}

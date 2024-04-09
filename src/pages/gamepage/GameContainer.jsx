@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import * as gameLogic from "../../util/game_logic";
 import { gameSetup } from "../../util/game_setup";
 import { GamePres } from "./GamePres";
-import { useNavigate } from "react-router-dom";
 
 export const GameContainer = () => {
   // Ref variable for persisting state after components re-render
